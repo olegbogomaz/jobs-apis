@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Runtime.Serialization;
 using System.Text.Json;
 using System.Threading.Tasks;
 
@@ -10,7 +11,9 @@ namespace JobsApis.Controllers
     [Route("[controller]")]
     public class JobsController : ControllerBase
     {
-        private static readonly HttpClient client = new HttpClient();
+        private static readonly HttpClient Client = new HttpClient();
+
+        private static readonly string BaseUrl = "https://jobs.github.com/positions.json";
 
         public JobsController()
         {
@@ -19,24 +22,23 @@ namespace JobsApis.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            var baseUrl = "https://jobs.github.com/positions.json";
-
-            var queryString = HttpContext.Request.QueryString;
-
-            var jobs = await GetData($"{baseUrl}{queryString}");
+            var jobs = await GetData($"{BaseUrl}{HttpContext.Request.QueryString}");
 
             return Ok(jobs);
         }
 
         private static async Task<List<Job>> GetData(string url)
         {
-            var data = client.GetStreamAsync(url);
+            var data = Client.GetStreamAsync(url);
             return await JsonSerializer.DeserializeAsync<List<Job>>(await data);
         }
     }
 
-    public class Job 
+    [DataContract(Namespace = "")]
+    public class Job
     {
+        public string id { get; set; }
+
         public string title { get; set; }
 
         public string description { get; set; }
