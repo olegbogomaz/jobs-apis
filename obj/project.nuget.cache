@@ -1,8 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "9tmzOHjv/NW81Ta3Hx1V5EjV7vNNorRspV33XY9OUdQ9fO8K1JejVci+Ilosfr/GaKIaorXYc5fHnzorvneZ/g==",
+  "dgSpecHash": "CX6GWf9n015KCjhrz6YQPHIzjhsk23Xbs2jEBMUDoCG65cbqCaQLPPlkSUVpb0BRqi27tVLJz1km5gnc4nTdUA==",
   "success": true,
-  "projectFilePath": "C:\\Repos\\OlegJobApis\\JobApis\\JobApis.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Repos\\OlegJobApis\\JobApis.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\P124169\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
+    "C:\\Users\\P124169\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\P124169\\.nuget\\packages\\system.reflection.emit\\4.7.0\\system.reflection.emit.4.7.0.nupkg.sha512"
+  ],
   "logs": []
 }

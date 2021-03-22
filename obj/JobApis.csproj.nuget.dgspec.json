@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Repos\\OlegJobApis\\JobApis\\JobApis.csproj": {}
+    "C:\\Repos\\OlegJobApis\\JobApis.csproj": {}
   },
   "projects": {
-    "C:\\Repos\\OlegJobApis\\JobApis\\JobApis.csproj": {
+    "C:\\Repos\\OlegJobApis\\JobApis.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Repos\\OlegJobApis\\JobApis\\JobApis.csproj",
+        "projectUniqueName": "C:\\Repos\\OlegJobApis\\JobApis.csproj",
         "projectName": "JobApis",
-        "projectPath": "C:\\Repos\\OlegJobApis\\JobApis\\JobApis.csproj",
+        "projectPath": "C:\\Repos\\OlegJobApis\\JobApis.csproj",
         "packagesPath": "C:\\Users\\P124169\\.nuget\\packages\\",
-        "outputPath": "C:\\Repos\\OlegJobApis\\JobApis\\obj\\",
+        "outputPath": "C:\\Repos\\OlegJobApis\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\P124169\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -37,6 +37,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[10.1.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
