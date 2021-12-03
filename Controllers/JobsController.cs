@@ -13,7 +13,7 @@ namespace JobsApis.Controllers
     {
         private static readonly HttpClient Client = new HttpClient();
 
-        private static readonly string BaseUrl = "https://jobs.github.com/positions.json";
+        private static readonly string BaseUrl = "https://remotive.io/api/remote-jobs";
 
         public JobsController()
         {
@@ -27,17 +27,22 @@ namespace JobsApis.Controllers
             return Ok(jobs);
         }
 
-        private static async Task<List<Job>> GetData(string url)
+        private static async Task<Jobs> GetData(string url)
         {
             var data = Client.GetStreamAsync(url);
-            return await JsonSerializer.DeserializeAsync<List<Job>>(await data);
+            return await JsonSerializer.DeserializeAsync<Jobs>(await data);
         }
+    }
+
+    public class Jobs
+    {
+        public List<Job> jobs { get; set; }
     }
 
     [DataContract(Namespace = "")]
     public class Job
     {
-        public string id { get; set; }
+        public int id { get; set; }
 
         public string title { get; set; }
 
@@ -45,10 +50,8 @@ namespace JobsApis.Controllers
 
         public string url { get; set; }
 
-        public string company { get; set; }
+        public string company_name { get; set; }
 
-        public string location { get; set; }
-
-        public string company_logo { get; set; }
+        public string candidate_required_location { get; set; }
     }
 }
